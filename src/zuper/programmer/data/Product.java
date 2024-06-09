@@ -8,4 +8,8 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+
+    // public String toString() {
+    //     return "Product name : " + name + ", Price : " + price ;
+    // }
 }
