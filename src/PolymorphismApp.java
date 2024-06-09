@@ -9,12 +9,21 @@ public class PolymorphismApp {
         employee = new VicePresident("Ahmad");
         employee.sayHello("Budi");
 
-        sayHello(new Employee("Umam"));
         sayHello(new Manager("Mustafa"));
         sayHello(new VicePresident("Andi"));
+        sayHello(new Employee("Umam"));
     }
 
     static void sayHello(Employee employee) {
-        System.out.println("Hello " + employee.name);
+        if (employee instanceof VicePresident) {
+            VicePresident vicePresident = (VicePresident) employee;
+            System.out.println("Hello VP " + vicePresident.name);
+        }else if (employee instanceof Manager) {
+            Manager manager = (Manager) employee;
+            System.out.println("Hello Manager " + manager.name);
+            } else {
+            System.out.println("Hello " + employee.name);
+            
+        }
     }
 }
