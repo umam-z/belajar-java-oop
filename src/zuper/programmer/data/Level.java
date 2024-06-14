@@ -1,5 +1,8 @@
 package zuper.programmer.data;
 
+import zuper.programmer.annotation.Fancy;
+
+@Fancy(name = "Level", tags = {"Application", "Java"})
 public enum Level {
     // enum dengan constructor
     STANDARD("Standard Level"),

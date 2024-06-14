@@ -1,10 +1,12 @@
 package zuper.programmer.application;
 
+import zuper.programmer.annotation.Fancy;
 import zuper.programmer.data.LoginRequest;
 import zuper.programmer.error.ValidationException;
 import zuper.programmer.util.ValidationUtil;
 
 public class ValidationApp {
+    @Fancy(name = "AnimalApp", tags = {"Application", "Java"})
     public static void main(String[] args) {
         LoginRequest loginRequest = new LoginRequest("Umam", "Rahasia");
         try {
