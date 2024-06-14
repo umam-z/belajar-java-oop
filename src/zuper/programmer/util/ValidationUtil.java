@@ -1,6 +1,7 @@
 package zuper.programmer.util;
 
 import zuper.programmer.data.LoginRequest;
+import zuper.programmer.error.BlankException;
 import zuper.programmer.error.ValidationException;
 
 public class ValidationUtil {
@@ -13,6 +14,18 @@ public class ValidationUtil {
             throw new NullPointerException("password is null");
         } else if (loginRequest.password().isBlank()) {
             throw new ValidationException("password is blank");
+        } 
+    }
+    
+    public static void validateRuntime(LoginRequest loginRequest) {
+        if (loginRequest.username() == null) {
+            throw new NullPointerException("username is null");
+        } else if (loginRequest.username().isBlank()) {
+            throw new BlankException("username is blank");
+        } else if (loginRequest.password() == null) {
+            throw new NullPointerException("password is null");
+        } else if (loginRequest.password().isBlank()) {
+            throw new BlankException("password is blank");
         } 
     }
 }
